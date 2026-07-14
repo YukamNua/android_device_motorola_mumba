@@ -150,6 +150,8 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/bin/hw/android.hardware.biometrics.fingerprint-service.fpc': blob_fixup()
         .remove_needed('android.hardware.biometrics.fingerprint-V4-ndk.so')
         .remove_needed('android.hardware.biometrics.common-V4-ndk.so'),
+    ('system_ext/etc/seccomp_policy/tcmd.policy', 'vendor/etc/seccomp_policy/qsap_qapeservice.policy', 'vendor/etc/seccomp_policy/syshealthmon.policy'): blob_fixup()
+        .add_line_if_missing('lseek: 1'),
 } # fmt: skip
 
 extract_fns: extract_fns_user_type = {
