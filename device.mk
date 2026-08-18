@@ -432,3 +432,6 @@ PRODUCT_PACKAGES += \
 
 # Inherit from the proprietary files makefile.
 $(call inherit-product, vendor/motorola/mumba/mumba-vendor.mk)
+
+# Inherit DolbyAtmos
+$(call inherit-product-if-exists, hardware/dolby/aidl-dolby.mk)
